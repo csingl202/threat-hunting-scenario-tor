@@ -81,8 +81,7 @@ DeviceProcessEvents
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-03-19T18:53:01.1246358Z`, an employee on the "ovrsr" device successfully established a connection to the remote IP address `176.198.159.33` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\sperl\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443`.
-
+Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2025-03-19T18:53:01.1246358Z`, an employee on the "ovrsr" device successfully established a connection to the remote IP address `194.15.112.41` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\sperl\desktop\tor browser\browser\torbrowser\tor\tor.exe`.
 **Query used to locate events:**
 
 ```kql
@@ -94,7 +93,8 @@ DeviceNetworkEvents
 | project Timestamp, DeviceName, InitiatingProcessAccountName, ActionType, RemoteIP, RemotePort, RemoteUrl, InitiatingProcessFileName, InitiatingProcessFolderPath  
 | order by Timestamp desc
 ```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/87a02b5b-7d12-4f53-9255-f5e750d0e3cb">
+ ![image](https://github.com/user-attachments/assets/18b14de4-889a-45f7-a2d7-133583b651b9)
+
 
 ---
 
@@ -125,7 +125,7 @@ DeviceNetworkEvents
 ### 4. Network Connection - TOR Network
 
 - **Timestamp:** `2025-03-19T18:54:14.1246358Z`
-- **Event:** A network connection to IP `176.198.159.33` on port `9001` by user "sperl" was established using `tor.exe`, confirming TOR browser network activity.
+- **Event:** A network connection to IP `194.15.112.41` on port `9001` by user "sperl" was established using `tor.exe`, confirming TOR browser network activity.
 - **Action:** Connection success.
 - **Process:** `tor.exe`
 - **File Path:** `c:\users\sperl\desktop\tor browser\browser\torbrowser\tor\tor.exe`
@@ -133,7 +133,7 @@ DeviceNetworkEvents
 ### 5. Additional Network Connections - TOR Browser Activity
 
 - **Timestamps:**
-  - `2025-03-19T18:54:56:08Z` - Connected to `194.164.169.85` on port `443`.
+  - `2025-03-19T18:54:56:08Z` - Connected to `209.141.55.26` on port `9001`.
   - `2025-03-19T18:55:12:16Z` - Local connection to `127.0.0.1` on port `9150`.
 - **Event:** Additional TOR network connections were established, indicating ongoing activity by user "sperl" through the TOR browser.
 - **Action:** Multiple successful connections detected.
